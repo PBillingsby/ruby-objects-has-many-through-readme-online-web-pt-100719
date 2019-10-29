@@ -16,7 +16,7 @@ class Waiter
 
   def meals
     Meal.all.select do |meal|
-      meal.waiter == self 
+      meal.waiter == self
     end
   end
 
@@ -24,7 +24,7 @@ class Waiter
     tipper = meals.max do |meal_1, meal_2|
       meal_1.tip <=> meal_2.tip
     end
-  
+
     tipper.customer
   end
 end
